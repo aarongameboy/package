@@ -4,7 +4,7 @@
   "platform": "Windows x64",
   "configuration": "Development",
   "source": "Current local workspace including uncommitted changes",
-  "total_bytes": 3587147380,
+  "total_bytes": 3587147355.0,
   "files": [
     {
       "path": "Windows/Engine/Binaries/ThirdParty/DbgHelp/dbghelp.dll",
@@ -263,8 +263,8 @@
     },
     {
       "path": "Windows/开始游戏.bat",
-      "bytes": 90,
-      "sha256": "fd3bf66229282a8b516fc589a1aa0a8c2dfb9b7e16f48408d03a4e2c7726083b"
+      "bytes": 65,
+      "sha256": "b77621f12a6a677e7b9a24b6a5750c240564cf91f8ad517ea3975eab38e701f9"
     },
     {
       "path": "Windows/试玩说明.txt",

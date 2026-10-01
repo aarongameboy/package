@@ -4,7 +4,14 @@
 
 ## 下载并运行
 
-本仓库使用 Git LFS 保存游戏资源。安装 Git 和 Git LFS 后运行：
+推荐在网页选择 **Code → Download ZIP**，完整解压后双击根目录 `Repair_and_Start.bat`。
+它会自动下载 ZIP 中缺失的真实游戏文件，逐文件校验 SHA256，完成后启动游戏。无需安装 Git。
+首次下载约 3.59 GB，请等待下载完成；中断后再次运行可续传。请保留完整目录结构。
+
+已下载旧版 `package-main` 且出现“16 位应用程序”提示时，将最新版 `Repair_and_Start.bat` 放进
+`package-main` 根目录（与 `Windows` 文件夹同级），双击修复。不要把它放进 `Windows` 子目录。
+
+也可以安装 Git 和 Git LFS 后运行：
 
 ```powershell
 git lfs install
@@ -16,7 +23,7 @@ git lfs pull
 打开 `Windows` 文件夹，双击 `开始游戏.bat`。也可以直接运行同目录的 `Project2026.exe`。
 必须保留 `Engine` 和 `Project2026` 的完整目录结构，不要只复制启动程序。
 
-GitHub 网页上的文件可能显示为 LFS 指针。请使用上述方式取得完整包体；普通“Download ZIP”未必包含真实大文件。
+GitHub 网页 ZIP 中的大文件可能是 LFS 指针。请先运行修复启动器，再启动 EXE；否则 Windows 会误报“16 位应用程序”。
 
 ## 试玩说明
 
