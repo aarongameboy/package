@@ -1,0 +1,31 @@
+# Project2026 Windows 试玩包
+
+2026-10-01 制作的完整、未压缩 Windows 包体位于 `Windows/`。无需 Unreal Engine 编辑器。
+
+## 下载并运行
+
+本仓库使用 Git LFS 保存游戏资源。安装 Git 和 Git LFS 后运行：
+
+```powershell
+git lfs install
+git clone https://github.com/aarongameboy/package.git
+cd package
+git lfs pull
+```
+
+打开 `Windows` 文件夹，双击 `开始游戏.bat`。也可以直接运行同目录的 `Project2026.exe`。
+必须保留 `Engine` 和 `Project2026` 的完整目录结构，不要只复制启动程序。
+
+GitHub 网页上的文件可能显示为 LFS 指针。请使用上述方式取得完整包体；普通“Download ZIP”未必包含真实大文件。
+
+## 试玩说明
+
+- Windows 10/11 64 位，默认 DirectX 12。包体约 3.59 GB。
+- 默认连接 `tencent.codepeak.cn:5555` 测试服，需要网络和可用试玩账号。
+- 操作及运行库安装入口见 `Windows/试玩说明.txt`。
+- 大资源采用引擎原生分区文件；游戏自动读取，无需合并。
+- 成品通过正常音频启动和测试服握手/心跳；资源重新分区后再次通过 293 项本地场景检查（2轮8次切图、12次移动）。
+- 本地场景测试使用测试数据，未用真实账号完成完整游戏流程。
+- 旧独立海钓场景的部分鱼材质可能显示异常。
+
+`build_manifest.json` 与 `SHA256SUMS.txt` 记录上传文件大小和校验和。不包含编辑器、源码、调试符号或试玩账号。
