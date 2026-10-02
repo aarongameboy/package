@@ -1,7 +1,7 @@
 @echo off
 setlocal
 cd /d "%~dp0"
-curl.exe --silent --show-error --location --fail --connect-timeout 10 --max-time 30 --retry 1 --output "%~dp0Download_Game_20261002_1713.ps1.new" "https://raw.githubusercontent.com/aarongameboy/package/fc8f5475ef54e28a868b5b6a8e44f52e0ed8e8ee/Download_Game_20261002_1713.ps1"
+curl.exe --silent --show-error --location --fail --connect-timeout 10 --max-time 30 --retry 1 --output "%~dp0Download_Game_20261002_1713.ps1.new" "https://raw.githubusercontent.com/aarongameboy/package/bb431171a92b54ad808798ea88c2bbdbe7fe2b01/Download_Game_20261002_1713.ps1"
 if errorlevel 1 (
     if not exist "%~dp0Download_Game_20261002_1713.ps1" goto failed
     echo Using cached matching downloader. Existing downloads will be resumed.
