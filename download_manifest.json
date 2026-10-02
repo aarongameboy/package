@@ -1,0 +1,235 @@
+{
+  "build_date": "2026-10-01",
+  "engine": "5.8.3",
+  "platform": "Windows x64",
+  "configuration": "Development",
+  "source": "Current local workspace including uncommitted changes",
+  "total_bytes": 3533937886,
+  "files": [
+    {
+      "path": "Windows/Engine/Binaries/ThirdParty/DbgHelp/dbghelp.dll",
+      "bytes": 2232688,
+      "sha256": "6c1484085a1f4223880c059fd093a468702d0ecb224981918336fe847f5af92f",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/6c1484085a1f_dbghelp.dll"
+    },
+    {
+      "path": "Windows/Engine/Binaries/ThirdParty/MsQuic/v220/win64/msquic.dll",
+      "bytes": 2547080,
+      "sha256": "780959f289e380a21fdab0dba7ac468c8dd0606ea43b755865a7989f3c7221e9",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/780959f289e3_msquic.dll"
+    },
+    {
+      "path": "Windows/Engine/Binaries/ThirdParty/NVIDIA/GPUDirect/Win64/dvp.dll",
+      "bytes": 225720,
+      "sha256": "e768948cd4881b38684ed3304bb8c66efa46f9b13bfd6236a55133db55d5ddd1",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/e768948cd488_dvp.dll"
+    },
+    {
+      "path": "Windows/Engine/Binaries/ThirdParty/NVIDIA/NVaftermath/Win64/GFSDK_Aftermath_Lib.x64.dll",
+      "bytes": 5799024,
+      "sha256": "e3e777a9644452c2772336c4b35c39ed4d8abeb9b9c0c1dceb9e10bdb378e5a2",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/e3e777a96444_GFSDK_Aftermath_Lib.x64.dll"
+    },
+    {
+      "path": "Windows/Engine/Binaries/ThirdParty/Ogg/Win64/VS2015/libogg_64.dll",
+      "bytes": 59832,
+      "sha256": "cf34407ec00248c208aa4b156126a725b79a4bce9f5c8034550c798a9b7a1407",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cf34407ec002_libogg_64.dll"
+    },
+    {
+      "path": "Windows/Engine/Binaries/ThirdParty/Vorbis/Win64/VS2015/libvorbis_64.dll",
+      "bytes": 1724856,
+      "sha256": "1cd0eba3df4915ca6498917b91b78dc1dfda1c9155f2fd5b98dedd5b5ba918f3",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/1cd0eba3df49_libvorbis_64.dll"
+    },
+    {
+      "path": "Windows/Engine/Binaries/ThirdParty/Vorbis/Win64/VS2015/libvorbisfile_64.dll",
+      "bytes": 48568,
+      "sha256": "a00e6b073cec241d85d590ee138906ef9fdf9efef8d0d4989813359cd048a6f9",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a00e6b073cec_libvorbisfile_64.dll"
+    },
+    {
+      "path": "Windows/Engine/Binaries/ThirdParty/Windows/WinPixEventRuntime/x64/WinPixEventRuntime.dll",
+      "bytes": 69056,
+      "sha256": "132284f41399e0186bb29c6c2655aba5403a42793500518b9ab8bfd0b1336a57",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/132284f41399_WinPixEventRuntime.dll"
+    },
+    {
+      "path": "Windows/Engine/Binaries/ThirdParty/Windows/XAudio2_9/x64/xaudio2_9redist.dll",
+      "bytes": 858144,
+      "sha256": "9d996ba84395c1e56604792a77775b0a7fa957d7b51b4d8b985040bcd80a6fd5",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/9d996ba84395_xaudio2_9redist.dll"
+    },
+    {
+      "path": "Windows/Engine/Config/StagedBuild_Project2026.ini",
+      "bytes": 3,
+      "sha256": "f1945cd6c19e56b3c1c78943ef5ec18116907a4ca1efc40a57d48ab1db7adfc5",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/f1945cd6c19e_StagedBuild_Project2026.ini"
+    },
+    {
+      "path": "Windows/Engine/Content/Renderer/TessellationTable.bin",
+      "bytes": 259568,
+      "sha256": "edc4f3b628a139c5e185bbaeca661c95c1f427368d3b92892c5cff36c56dd941",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/edc4f3b628a1_TessellationTable.bin"
+    },
+    {
+      "path": "Windows/Engine/Content/Slate/Cursor/invisible.cur",
+      "bytes": 326,
+      "sha256": "fef3980fa567e9c45d5d8dcaa432a2c1a3f3bb17fe67d7ab198164f56c142aa1",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/fef3980fa567_invisible.cur"
+    },
+    {
+      "path": "Windows/Engine/Content/SlateDebug/Fonts/LastResort.tps",
+      "bytes": 930,
+      "sha256": "0f775fa99d05e21d43d2d06d55982b23dcdccdb512a9a5a07aff674f212c41b8",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/0f775fa99d05_LastResort.tps"
+    },
+    {
+      "path": "Windows/Engine/Content/SlateDebug/Fonts/LastResort.ttf",
+      "bytes": 5395052,
+      "sha256": "fff0f8de0b868b964950fe97c9b60f893e9bc85a4f90b3629c5693db058b97b9",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/fff0f8de0b86_LastResort.ttf"
+    },
+    {
+      "path": "Windows/Engine/Extras/Redist/en-us/vc_redist.x64.exe",
+      "bytes": 18569648,
+      "sha256": "1cf8e061174c320c8e125f1b09996ee0555ef450e515b06ab0fd99cb4c8db6ef",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/1cf8e061174c_vc_redist.x64.exe"
+    },
+    {
+      "path": "Windows/Engine/Plugins/NNE/NNERuntimeORT/Binaries/ThirdParty/Onnxruntime/Win64/onnxruntime.dll",
+      "bytes": 17339384,
+      "sha256": "9fc1ca0e75480c7805b6d3c4653864eaaee2fca5daa609b5347adf0b4185791a",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/9fc1ca0e7548_onnxruntime.dll"
+    },
+    {
+      "path": "Windows/Engine/Plugins/Runtime/OpenCV/Binaries/ThirdParty/Win64/opencv_world455.dll",
+      "bytes": 42819512,
+      "sha256": "2a8b1046e7bf593ffc11f36827c6cf6d7896769912fd9e1561860dcdb5bdc4b9",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/2a8b1046e7bf_opencv_world455.dll"
+    },
+    {
+      "path": "Windows/NOTICES.txt",
+      "bytes": 111,
+      "sha256": "ba49ae5586f817b36a2772269f71f899cb1f54b5f2720fad951319edd5e140b8",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/ba49ae5586f8_NOTICES.txt"
+    },
+    {
+      "path": "Windows/Project2026/Binaries/Win64/D3D12/x64/D3D12Core.dll",
+      "bytes": 4831768,
+      "sha256": "5d262c97239e1aff8b03a7150abcaa84cc7983d311946708f982227d146fbb37",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/5d262c97239e_D3D12Core.dll"
+    },
+    {
+      "path": "Windows/Project2026/Binaries/Win64/D3D12/x64/d3d12SDKLayers.dll",
+      "bytes": 4943344,
+      "sha256": "66afc2d2918191f9b97026e3c630ac6e93f5f83e3bd0eab34349ec2f66a0b4af",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/66afc2d29181_d3d12SDKLayers.dll"
+    },
+    {
+      "path": "Windows/Project2026/Binaries/Win64/DML/x64/DirectML.dll",
+      "bytes": 18538488,
+      "sha256": "579dd89146322ea2567de7db16b8e10f350eb0cf147ecaafe5b129d9fe175a84",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/579dd8914632_DirectML.dll"
+    },
+    {
+      "path": "Windows/Project2026/Binaries/Win64/Lua.dll",
+      "bytes": 243712,
+      "sha256": "4f52a564593ea56623dc885f51e6b8de973f3786f691a36e00d1cf68d5a80e64",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/4f52a564593e_Lua.dll"
+    },
+    {
+      "path": "Windows/Project2026/Binaries/Win64/Project2026.exe",
+      "bytes": 378675200,
+      "sha256": "f4cb3b9c37202c7f7d63af39b74b0b822b0d153bfeb793baf7726b6e2353be43",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/f4cb3b9c3720_Project2026.exe"
+    },
+    {
+      "path": "Windows/Project2026/Binaries/Win64/tbb12.dll",
+      "bytes": 342456,
+      "sha256": "7e58ae38fd5d47c72b750dbdcf2978a1f36719663a0a4500a9cc857316612c34",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/7e58ae38fd5d_tbb12.dll"
+    },
+    {
+      "path": "Windows/Project2026/Binaries/Win64/tbbmalloc.dll",
+      "bytes": 117176,
+      "sha256": "075ba2869e082ab5f1f159ad06614ce63c31ae51099e18b540822cc758697e56",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/075ba2869e08_tbbmalloc.dll"
+    },
+    {
+      "path": "Windows/Project2026/Content/Paks/global.ucas",
+      "bytes": 3977552,
+      "sha256": "684dffbc241058acf9d52ab2372c86027ea953880c0219fa1b37f466ea2ac6f7",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/684dffbc2410_global.ucas"
+    },
+    {
+      "path": "Windows/Project2026/Content/Paks/global.utoc",
+      "bytes": 926,
+      "sha256": "cca6fd92a041d697af74d76fea3de844aae1d4d45f5751ba52f20d52e695116e",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cca6fd92a041_global.utoc"
+    },
+    {
+      "path": "Windows/Project2026/Content/Paks/Project2026-Windows.pak",
+      "bytes": 58684338,
+      "sha256": "e0f300ab11b88fc073855b6cfdf75d6e5a0a25a5e6aab80654a41a86f43b4646",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/e0f300ab11b8_Project2026-Windows.pak"
+    },
+    {
+      "path": "Windows/Project2026/Content/Paks/Project2026-Windows.ucas",
+      "bytes": 1053402464,
+      "sha256": "38754472937be2d5662860d9ff47b0607aaf3623012dd5d97f26aea96523f639",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/38754472937b_Project2026-Windows.ucas"
+    },
+    {
+      "path": "Windows/Project2026/Content/Paks/Project2026-Windows.utoc",
+      "bytes": 1573234,
+      "sha256": "c9f82f69a9a72af1eedab0fc60a3c1710a62d194adfb9cac18b53b255288dc23",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/c9f82f69a9a7_Project2026-Windows.utoc"
+    },
+    {
+      "path": "Windows/Project2026/Content/Paks/Project2026-Windows_s1.ucas",
+      "bytes": 1071290160,
+      "sha256": "a6e675addebadd907f876b988f61493d8db6373975dc9a2d2f3e86ef736bab33",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_Project2026-Windows_s1.ucas"
+    },
+    {
+      "path": "Windows/Project2026/Content/Paks/Project2026-Windows_s2.ucas",
+      "bytes": 839194432,
+      "sha256": "cfc880e1ff36f6025eebe0ebad3db8afb12501f8316d72ca63df79681650fddd",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_Project2026-Windows_s2.ucas"
+    },
+    {
+      "path": "Windows/Project2026.exe",
+      "bytes": 171520,
+      "sha256": "0a8d13bc5be5c66f3c4bcf587a3573a25e0b71d36b08ec9d12140921491ebea0",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/0a8d13bc5be5_Project2026.exe"
+    },
+    {
+      "path": "Windows/试玩说明.txt",
+      "bytes": 1614,
+      "sha256": "d9d31d36410668043e1b3b892d7f012a1f49659304b34cb2bc0c67341ba90b3d",
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/d9d31d364106_%E8%AF%95%E7%8E%A9%E8%AF%B4%E6%98%8E.txt"
+    }
+  ],
+  "optional_files": [
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_api_dump.dll",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_api_dump.json",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_crash_diagnostic.dll",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_crash_diagnostic.json",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_gfxreconstruct.dll",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_gfxreconstruct.json",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_khronos_profiles.dll",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_khronos_profiles.json",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_khronos_shader_object.dll",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_khronos_shader_object.json",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_khronos_synchronization2.dll",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_khronos_synchronization2.json",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_khronos_validation.dll",
+    "Windows/Engine/Binaries/ThirdParty/Vulkan/Win64/VkLayer_khronos_validation.json",
+    "Windows/Engine/Extras/GPUDumpViewer/GPUDumpViewer.html",
+    "Windows/Engine/Extras/GPUDumpViewer/OpenGPUDumpViewer.bat",
+    "Windows/Engine/Extras/GPUDumpViewer/OpenGPUDumpViewer.sh",
+    "Windows/Engine/Extras/Redist/en-us/vc_redist.arm64.exe",
+    "Windows/开始游戏.bat"
+  ]
+}

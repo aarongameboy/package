@@ -1,15 +1,15 @@
-# Project2026 Windows 试玩包
+﻿# Project2026 Windows 试玩包
 
 2026-10-01 制作的完整、未压缩 Windows 包体位于 `Windows/`。无需 Unreal Engine 编辑器。
 
 ## 下载并运行
 
 推荐在网页选择 **Code → Download ZIP**，完整解压后双击根目录 `Repair_and_Start.bat`。
-它会自动下载 ZIP 中缺失的真实游戏文件，逐文件校验 SHA256，完成后启动游戏。无需安装 Git。
-首次下载约 3.59 GB，请等待下载完成；中断后再次运行可续传。请保留完整目录结构。
+它会自动更新下载器，从 GitHub Release 并行下载缺失的真实游戏文件，逐文件校验 SHA256，完成后启动游戏。无需安装 Git。
+首次必需下载约 3.53 GB，默认 4 路并发；已有完整文件直接复用，旧版 `.download` 中间文件也可续传。跳过 Vulkan 调试组件、GPU 分析工具与 ARM 安装包。中断后再次运行即可继续，请保留完整目录结构。
 
 已下载旧版 `package-main` 且出现“16 位应用程序”提示时，将最新版 `Repair_and_Start.bat` 放进
-`package-main` 根目录（与 `Windows` 文件夹同级），双击修复。不要把它放进 `Windows` 子目录。
+`package-main` 根目录（与 `Windows` 文件夹同级），先关闭旧下载窗口，再双击修复。不要把它放进 `Windows` 子目录。新启动器会刷新旧版下载器，不需要删除已经下载的内容。
 
 也可以安装 Git 和 Git LFS 后运行：
 
@@ -36,3 +36,5 @@ GitHub 网页 ZIP 中的大文件可能是 LFS 指针。请先运行修复启动
 - 旧独立海钓场景的部分鱼材质可能显示异常。
 
 `build_manifest.json` 与 `SHA256SUMS.txt` 记录上传文件大小和校验和。不包含编辑器、源码、调试符号或试玩账号。
+
+下载速度受 GitHub 在所在地的网络影响，无法保证国内网络速度；Release 不通时自动退回原文件渠道。每个文件校验通过后才替换目标文件，下载失败不会启动不完整游戏。
