@@ -39,6 +39,18 @@ $worker = {
         try { return [BitConverter]::ToString($algorithm.ComputeHash($hashStream)).Replace('-','').ToLowerInvariant() }
         finally { $algorithm.Dispose(); $hashStream.Dispose() }
     }
+    function Receive-Download([string]$url,[string]$destination,[long]$expectedBytes) {
+        for ($attempt=0; $attempt -lt 8; $attempt++) {
+            if ((Test-Path -LiteralPath $destination) -and (Get-Item -LiteralPath $destination).Length -eq $expectedBytes) { return }
+            $requestUrl=$url
+            if ($url.StartsWith('https://github.com/')) { $requestUrl=$url+'?download=1&request='+[DateTime]::UtcNow.Ticks }
+            & $curl --silent --show-error --location --fail --connect-timeout 15 --speed-limit 1024 --speed-time 30 --continue-at - --stderr ($destination+'.log') --output $destination $requestUrl
+            if ($LASTEXITCODE -eq 0) { return }
+            if ((Test-Path -LiteralPath $destination) -and (Get-Item -LiteralPath $destination).Length -eq $expectedBytes) { return }
+            Start-Sleep -Seconds ([Math]::Min(2+$attempt,8))
+        }
+        throw 'Download connection interrupted after retries'
+    }
     $partial=$file.target+'.download'
     if ((Test-Path -LiteralPath $partial) -and (Get-Item -LiteralPath $partial).Length -gt $file.bytes) { throw "Oversized download: $partial" }
     $urlPath=($file.path.Split('/') | ForEach-Object { [Uri]::EscapeDataString($_) }) -join '/'
@@ -51,7 +63,7 @@ $worker = {
             foreach ($chunk in $file.chunks) {
                 $length=if (Test-Path -LiteralPath $partial) { (Get-Item -LiteralPath $partial).Length } else { [long]0 }
                 if ($length -ge ($offset+[long]$chunk.bytes)) { $offset += [long]$chunk.bytes; continue }
-                $segment=$partial+'.segment'
+                $segment=$partial+'.segment-'+$offset
                 $prefix=$length-$offset
                 if ($prefix -gt 0) {
                     if (-not (Test-Path -LiteralPath $segment) -or (Get-Item -LiteralPath $segment).Length -lt $prefix) {
@@ -64,8 +76,7 @@ $worker = {
                     try { $stream.SetLength($offset) } finally { $stream.Dispose() }
                 }
                 if (-not (Test-Path -LiteralPath $segment) -or (Get-Item -LiteralPath $segment).Length -ne [long]$chunk.bytes) {
-                    & $curl --silent --show-error --location --fail --retry 2 --retry-delay 2 --connect-timeout 10 --speed-limit 1024 --speed-time 30 --continue-at - --stderr ($partial+'.log') --output $segment $chunk.url
-                    if ($LASTEXITCODE -ne 0) { throw 'Chunk interrupted' }
+                    Receive-Download $chunk.url $segment ([long]$chunk.bytes)
                 }
                 if ((Get-Item -LiteralPath $segment).Length -ne [long]$chunk.bytes -or (Get-DownloadHash $segment) -ne $chunk.sha256) {
                     Move-Item -LiteralPath $segment -Destination ($segment+'.invalid-'+[DateTime]::UtcNow.Ticks)
@@ -84,8 +95,7 @@ $worker = {
     foreach ($url in $urls) {
         if ($complete) { break }
         if ((Test-Path -LiteralPath $partial) -and (Get-Item -LiteralPath $partial).Length -eq $file.bytes) { $complete=$true; break }
-        $output = & $curl --silent --show-error --location --fail --retry 2 --retry-delay 2 --connect-timeout 10 --speed-limit 1024 --speed-time 30 --continue-at - --stderr ($partial+'.log') --output $partial $url
-        if ($LASTEXITCODE -eq 0) { $complete=$true; break }
+        try { Receive-Download $url $partial $file.bytes; $complete=$true; break } catch { $complete=$false }
     }
     if (-not $complete) { throw "Interrupted: $($file.path). Run again to resume." }
     if ((Get-Item -LiteralPath $partial).Length -ne $file.bytes -or (Get-DownloadHash $partial) -ne $file.sha256) {
@@ -126,7 +136,7 @@ try {
             $downloaded=[long]0
             foreach ($file in $pending) {
                 if (Test-Path -LiteralPath ($file.target+'.download')) { $downloaded += (Get-Item -LiteralPath ($file.target+'.download')).Length }
-                if (Test-Path -LiteralPath ($file.target+'.download.segment')) { $downloaded += (Get-Item -LiteralPath ($file.target+'.download.segment')).Length }
+                foreach ($segmentFile in @(Get-ChildItem -LiteralPath ([IO.Path]::GetDirectoryName($file.target)) -Filter ([IO.Path]::GetFileName($file.target)+'.download.segment-*') -ErrorAction SilentlyContinue)) { if ($segmentFile.Name -notmatch '\.(log|invalid-)') { $downloaded += (Get-Item -LiteralPath $segmentFile.FullName).Length } }
                 if ((Test-Path -LiteralPath $file.target) -and (Get-Item -LiteralPath $file.target).Length -eq $file.bytes) { $downloaded += $file.bytes }
             }
             $total=($pending | Measure-Object -Property bytes -Sum).Sum
