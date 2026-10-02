@@ -1,48 +1,27 @@
-﻿# Project2026 Windows 试玩包
+# Project2026 Windows 试玩包
 
-2026-10-01 制作的完整、未压缩 Windows 包体位于 `Windows/`。无需 Unreal Engine 编辑器。
+最新包体：2026-10-02，Windows x64，Development，包含已验证的登录 Loading。
 
-## 下载并运行
+## 下载与启动
 
-推荐在网页选择 **Code → Download ZIP**，完整解压后双击根目录 `Repair_and_Start.bat`。
-它会取得对应的已验证下载器，从 GitHub Release 并行下载缺失的真实游戏文件，逐文件校验 SHA256，完成后启动游戏。无需安装 Git。
-首次必需下载约 3.53 GB，默认 4 路并发；已有完整文件直接复用，旧版 `.download` 中间文件也可续传。跳过 Vulkan 调试组件、GPU 分析工具与 ARM 安装包。中断后再次运行即可继续，请保留完整目录结构。
+在网页选择 Code → Download ZIP，完整解压后双击 `Windows/开始游戏.bat`，也可双击根目录 `Repair_and_Start.bat`。GitHub 网页 ZIP 中的大文件可能只有 LFS 指针，启动器会下载真实资源并校验，完成后自动开启游戏，无需 Unreal Engine 或 Git。
 
-已下载旧版 `package-main` 且出现“16 位应用程序”提示时，将最新版 `Repair_and_Start.bat` 放进
-`package-main` 根目录（与 `Windows` 文件夹同级），先关闭旧下载窗口，再双击修复。不要把它放进 `Windows` 子目录。新启动器会替换旧版下载器，不需要删除已经下载的内容。
+首次必需下载约 3.54 GB，4 路并发、64 MB 分片、断线续传。已有完整且 SHA256 一致的文件直接复用；不同版本的下载进度分开保留，不混用。GitHub 网络速度取决于所在地网络。
 
-也可以安装 Git 和 Git LFS 后运行：
+已有旧安装的玩家：关闭旧下载窗口，下载最新 `Windows/开始游戏.bat` 覆盖同名文件，再双击运行。保留 Windows 文件夹，完整旧资源按校验结果复用。旧入口仍固定旧版本；不会自动升级，请替换入口。
 
-```powershell
-git lfs install
-git clone https://github.com/aarongameboy/package.git
-cd package
-git lfs pull
-```
+原生资源、运行库与说明位于 `Windows/`，不要只复制 EXE。Windows 10/11 64 位，默认 DirectX 12；需要运行库时使用 `Windows/Engine/Extras/Redist/en-us/vc_redist.x64.exe`。
 
-打开 `Windows` 文件夹，双击 `开始游戏.bat`；此入口也会取得配套的根目录启动器和下载器。也可以直接运行同目录的 `Project2026.exe`。
-必须保留 `Engine` 和 `Project2026` 的完整目录结构，不要只复制启动程序。
+默认连接 `tencent.codepeak.cn:5555` 测试服，需要可用试玩账号。本次发布未部署或重启服务器。
 
-GitHub 网页 ZIP 中的大文件可能是 LFS 指针。请先运行修复启动器，再启动 EXE；否则 Windows 会误报“16 位应用程序”。
+## 验收
 
-## 试玩说明
-
-- Windows 10/11 64 位，默认 DirectX 12。包体约 3.59 GB。
-- 默认连接 `tencent.codepeak.cn:5555` 测试服，需要网络和可用试玩账号。
-- 操作及运行库安装入口见 `Windows/试玩说明.txt`。
-- 大资源采用引擎原生分区文件；游戏自动读取，无需合并。
-- 成品通过正常音频启动和测试服握手/心跳；资源重新分区后再次通过 293 项本地场景检查（2轮8次切图、12次移动）。
-- 本地场景测试使用测试数据，未用真实账号完成完整游戏流程。
+- 本轮打包客户端正常音频、登录界面、测试服握手通过。
+- 场景验收 293 项通过，两轮八次切图、十二次移动。
+- 登录 Loading 验收 33 项客户端断言和 5 项画面检查通过。
+- 快照 Lua 回归 83 项通过。未进行真实账号交易。
 - 旧独立海钓场景的部分鱼材质可能显示异常。
 
-`build_manifest.json` 与 `SHA256SUMS.txt` 记录上传文件大小和校验和。不包含编辑器、源码、调试符号或试玩账号。
+新版下载清单 `download_manifest_20261002_1713.json`、下载器与入口使用配套固定提交，防止缓存混用。`build_manifest.json` 和 `SHA256SUMS.txt` 对应最新原生包体；原 `download_manifest.json` 与旧 Release 保留，供旧入口继续下载旧版本。
 
-下载速度受 GitHub 在所在地的网络影响，无法保证国内网络速度；Release 不通时自动退回原文件渠道。两块大资源经 64 MB 分片自动还原，无需手动合并。每个分片和完整文件校验通过后才替换目标文件，下载失败不会启动不完整游戏。
-
-## 2026-10-02 真实下载验收
-
-从空目录只下载公开的“开始游戏.bat”，经公开 GitHub 链接真实拉取全部 34 个必需游戏文件（3,533,937,886 字节），未复制或硬链接本地包体。途中网络中断，修复重试、PowerShell 校验兼容性和更新缓存问题后，保留真实下载进度续传完成；全部文件 SHA256 通过并自动启动游戏。
-
-该下载包正常打开登录界面，音频初始化、测试服握手通过，无 Lua 或致命错误；同一下载包的隔离场景验收通过 293 项检查、两轮八次切图及十二次移动，未进行真实账号交易。
-
-本机使用既有代理网络。两次实际包体下载/续传阶段合计约 22 分 23 秒（不含排查和修复时间），不能作为国内直接访问 GitHub 的速度保证。试玩启动器与下载器按配套版本固定，避免缓存混用。
+新版 Release：[playtest-20261002-1713](https://github.com/aarongameboy/package/releases/tag/playtest-20261002-1713)。资源分片由启动器自动还原，无需手动合并。Git LFS 用户也可以 clone 仓库并执行 `git lfs pull` 后直接启动 `Windows/Project2026.exe`。

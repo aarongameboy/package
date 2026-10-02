@@ -263,8 +263,8 @@
     },
     {
       "path": "Windows/开始游戏.bat",
-      "bytes": 741,
-      "sha256": "d3697a02b864b7c2e9ad60ddf783ae3469e25d8303d18d24de70d6bcd7916cc1"
+      "bytes": 834,
+      "sha256": "a53b632dd56a2961b139ffffaedd0a3552feec18a6c258c1e8e06095fccf3052"
     },
     {
       "path": "Windows/试玩说明.txt",
@@ -272,5 +272,5 @@
       "sha256": "7e69bb047ab37881cc737f9d34d30a5d08b98a43d9071c8cf3be9f6a281bcee4"
     }
   ],
-  "total_bytes": 3590669912
+  "total_bytes": 3590670005
 }
