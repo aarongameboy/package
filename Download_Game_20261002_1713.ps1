@@ -148,6 +148,7 @@ try {
     }
     $lastReport=[DateTime]::MinValue
     $done=0
+    $completedPaths=@{}
     while ($jobs.Count -gt 0) {
         $remaining=@()
         foreach ($job in $jobs) {
@@ -156,6 +157,7 @@ try {
                     $result=$job.ps.EndInvoke($job.handle)
                     if (-not $result) { throw "Download worker returned no verified file." }
                     $done++
+                    $completedPaths[$job.file.path]=$true
                     Write-Host "[$done/$($pending.Count)] Verified $result"
                 } catch { $message=$_.Exception.GetBaseException().Message; $failures += $message; Write-Host $message -ForegroundColor Red }
                 finally { $job.ps.Dispose() }
@@ -166,8 +168,8 @@ try {
             $downloaded=[long]0
             foreach ($file in $pending) {
                 if (Test-Path -LiteralPath $file.partial) { $downloaded += (Get-Item -LiteralPath $file.partial).Length }
-                foreach ($segmentFile in @(Get-ChildItem -LiteralPath ([IO.Path]::GetDirectoryName($file.target)) -Filter ([IO.Path]::GetFileName($file.partial)+'.segment-*') -ErrorAction SilentlyContinue)) { if ($segmentFile.Name -notmatch '\.(log|invalid-)') { $downloaded += (Get-Item -LiteralPath $segmentFile.FullName).Length } }
-                if ((Test-Path -LiteralPath $file.target) -and (Get-Item -LiteralPath $file.target).Length -eq $file.bytes) { $downloaded += $file.bytes }
+                foreach ($segmentFile in @(Get-ChildItem -LiteralPath ([IO.Path]::GetDirectoryName($file.target)) -Filter ([IO.Path]::GetFileName($file.partial)+'.segment-*') -ErrorAction SilentlyContinue)) { if ($segmentFile.Name -notmatch '\.(log|invalid-|seed$)') { $downloaded += (Get-Item -LiteralPath $segmentFile.FullName).Length } }
+                if ($completedPaths.ContainsKey($file.path)) { $downloaded += $file.bytes }
             }
             $total=($pending | Measure-Object -Property bytes -Sum).Sum
             Write-Host ('Download progress: {0:N1} / {1:N1} MB; completed {2}/{3}' -f ($downloaded/1MB),($total/1MB),$done,$pending.Count)
