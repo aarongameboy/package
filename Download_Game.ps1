@@ -14,7 +14,7 @@ $curl = (Get-Command curl.exe -ErrorAction Stop).Source
 if (-not $ManifestPath) {
     $ManifestPath = Join-Path $root 'download_manifest.json'
     $fresh = $ManifestPath + '.new'
-    & $curl --silent --show-error --location --fail --connect-timeout 10 --max-time 30 --retry 1 --output $fresh 'https://raw.githubusercontent.com/aarongameboy/package/main/download_manifest.json'
+    & $curl --silent --show-error --location --fail --connect-timeout 10 --max-time 30 --retry 1 --output $fresh ('https://raw.githubusercontent.com/aarongameboy/package/main/download_manifest.json?update='+[DateTime]::UtcNow.Ticks)
     if ($LASTEXITCODE -eq 0) { Move-Item -LiteralPath $fresh -Destination $ManifestPath -Force }
     elseif (-not (Test-Path -LiteralPath $ManifestPath)) { throw 'Cannot load download list. Check network and run again.' }
 }
