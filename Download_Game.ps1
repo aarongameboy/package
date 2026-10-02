@@ -1,6 +1,12 @@
 ﻿param([switch]$StartGame, [string]$ManifestPath, [ValidateRange(1,8)][int]$Connections = 4)
 $ErrorActionPreference = 'Stop'
 $ProgressPreference = 'SilentlyContinue'
+function Get-DownloadHash([string]$path) {
+    $hashStream=[IO.File]::OpenRead($path)
+    $algorithm=[Security.Cryptography.SHA256]::Create()
+    try { return [BitConverter]::ToString($algorithm.ComputeHash($hashStream)).Replace('-','').ToLowerInvariant() }
+    finally { $algorithm.Dispose(); $hashStream.Dispose() }
+}
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $root = [IO.Path]::GetFullPath($PSScriptRoot)
 $gameRoot = Join-Path $root 'Windows'
@@ -19,7 +25,7 @@ foreach ($file in $manifest.files) {
     if (-not $file.path.StartsWith('Windows/') -or $file.sha256 -notmatch '^[0-9a-f]{64}$' -or $file.url -notmatch '^https://github\.com/aarongameboy/package/releases/download/playtest-20261001/[^/]+$') { throw 'Invalid download entry' }
     $target = [IO.Path]::GetFullPath((Join-Path $root $file.path))
     if (-not $target.StartsWith($gameRoot + '\', [StringComparison]::OrdinalIgnoreCase)) { throw 'Invalid build path' }
-    if ((Test-Path -LiteralPath $target -PathType Leaf) -and (Get-Item -LiteralPath $target).Length -eq [long]$file.bytes -and (Get-FileHash -LiteralPath $target -Algorithm SHA256).Hash -eq $file.sha256) { $reused++; continue }
+    if ((Test-Path -LiteralPath $target -PathType Leaf) -and (Get-Item -LiteralPath $target).Length -eq [long]$file.bytes -and (Get-DownloadHash $target) -eq $file.sha256) { $reused++; continue }
     New-Item -ItemType Directory -Path ([IO.Path]::GetDirectoryName($target)) -Force | Out-Null
     if ($file.chunks) {
         if (($file.chunks | Measure-Object bytes -Sum).Sum -ne [long]$file.bytes) { throw 'Invalid chunk size' }
