@@ -190,13 +190,162 @@
       "path": "Windows/Project2026/Content/Paks/Project2026-Windows_s1.ucas",
       "bytes": 1071290160,
       "sha256": "a6e675addebadd907f876b988f61493d8db6373975dc9a2d2f3e86ef736bab33",
-      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_Project2026-Windows_s1.ucas"
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_Project2026-Windows_s1.ucas",
+      "chunks": [
+        {
+          "bytes": 67108864,
+          "sha256": "f0c913982952934a18fc891f1a295004568cc828a3c11465dc85cc4b697372dd",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_000.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "3a84afdec43fbfcca5542151bce814961b18d23a06ef90453294296e6a63c9e7",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_001.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "5435ebdc2ee165e74e6bd84a3a594a8e7c3147986173e2fb93b7b07ccde8bd9f",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_002.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "40615ac7d0eafb2d0800ce33a721d483928189e2d98abe0d8a451daf4ea1a70f",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_003.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "eb6b791fd53803c75d77bdb5f5724ebb0942e7acfea81191874f04a4a2be275e",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_004.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "30785a3c7f9277321b3e6f5c4bbcc8502d0a7f0715fadd5173e3337b88c8aab5",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_005.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "6b7c49f297fc333f7d6d583fbb0864dd2fb5628c1dc27990e18264cb01be4d63",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_006.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "4e1bc0155dbfc3c6b2cac3fef1fd21c5091a982d86727b4ae1b7cc1d048ca3ff",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_007.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "2b76c660373d1501e0010ac3b6590042fa6d120d1c4a0fa055a2d9fcffb55a5e",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_008.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "f2abf1c1c3f265c89735a5f850d6c5d8cb7782341c3c156634e8486f1a9bc294",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_009.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "80c89e316defce2316e65ab860199630787cb98f91d966069ce1460883a9b10c",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_010.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "0ff93ecffb6e3502dc92ff30eb891a65f0df5c2194d89c1962e3fb8727c692c4",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_011.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "1995c458bbe55440519dff4731d0747d9e31210a29514c2527c141aa1a12b1b9",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_012.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "c8d106ef3793f819d23ae669379d3873b74c98a91eee8b2f7d1da639b10ff53a",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_013.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "716968bbf081b38f0d76f1931ab9bb02cc65bf25a40412ef1da2dea7e4009125",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_014.part"
+        },
+        {
+          "bytes": 64657200,
+          "sha256": "9aad836a0c397a420bec5880c8dfd00627056f24f8f87f7d2d89d935b2ae3d84",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/a6e675addeba_015.part"
+        }
+      ]
     },
     {
       "path": "Windows/Project2026/Content/Paks/Project2026-Windows_s2.ucas",
       "bytes": 839194432,
       "sha256": "cfc880e1ff36f6025eebe0ebad3db8afb12501f8316d72ca63df79681650fddd",
-      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_Project2026-Windows_s2.ucas"
+      "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_Project2026-Windows_s2.ucas",
+      "chunks": [
+        {
+          "bytes": 67108864,
+          "sha256": "d6667142b1efcdd6bd3da6d4196f044c1badc0177856f206b1bf38cdb70d0066",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_000.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "b8999697fb33425fde02c4b026bec75493f647d780f153a2580a917a6616d3b1",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_001.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "19a7d5893ae3e02ce68c55a8c6ac445ff6be3c67f909480d1319729edd06aca3",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_002.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "9ad60e7ef7e56d08919886b69655d859dc6e8fcc5983e34a77c86493fc88a1e2",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_003.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "c383c7fd08078acb0ed36729709ee05c9a33b754b15cc222cb6f12beac22fffb",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_004.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "55cd6078e616a690f3240155c065b3ff591d6c53ffd3f32c7be3171618f295c1",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_005.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "1a45640eceeffca8aaae626d22f108a7b7ce3a0eb764ac1664f5a728934c99cd",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_006.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "51a9a8a670612ffc96e81049b4a926c26d485284d8da82adfa7e00db5ef7e709",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_007.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "a56bd0e00eda7f2513081bd4e7b14c9f7595d8727da8faa3d9c71a967229c26c",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_008.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "f56d742423de0f5d322ae049ff5e08e622cc59e029b241dd40c3cd9a5e3ed527",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_009.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "5aa0525068faa79aa2ebc8b819bb69aee2824c89fd46a0bcfc370c656d846968",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_010.part"
+        },
+        {
+          "bytes": 67108864,
+          "sha256": "63438380f300cb915773251a01c18ee7db363a8ac63900ec617103034410caae",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_011.part"
+        },
+        {
+          "bytes": 33888064,
+          "sha256": "b2ae9f43512b914d3dca8f45105e4ccd31887b1dfe730fcf5569b6d9a3d092ae",
+          "url": "https://github.com/aarongameboy/package/releases/download/playtest-20261001/cfc880e1ff36_012.part"
+        }
+      ]
     },
     {
       "path": "Windows/Project2026.exe",
