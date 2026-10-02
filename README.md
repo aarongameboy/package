@@ -20,7 +20,7 @@ cd package
 git lfs pull
 ```
 
-打开 `Windows` 文件夹，双击 `开始游戏.bat`。也可以直接运行同目录的 `Project2026.exe`。
+打开 `Windows` 文件夹，双击 `开始游戏.bat`；此入口也会自动刷新根目录启动器并使用新版下载器。也可以直接运行同目录的 `Project2026.exe`。
 必须保留 `Engine` 和 `Project2026` 的完整目录结构，不要只复制启动程序。
 
 GitHub 网页 ZIP 中的大文件可能是 LFS 指针。请先运行修复启动器，再启动 EXE；否则 Windows 会误报“16 位应用程序”。
